@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", cursive;
+    background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1152px;
+    width: 720px;
+    overflow: hidden;
+}
+
+.hearts-background-full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 720px;
+    height: 1152px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.falling-heart-full {
+    position: absolute;
+    top: -5%;
+    opacity: 0.8;
+    animation-name: fall-full;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall-full {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(1152px) scale(0.8) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.player-container {
+    position: relative;
+    text-align: center;
+    padding: 40px;
+    z-index: 1;
+}
+
+.player-frame {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+    max-width: 300px;
+    margin: auto;
+    z-index: 1;
+}
+
+.image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.rotating img {
+    animation: spin 10s linear infinite;
+}
+
+.wave {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: radial-gradient(circle, #ffc0cb, transparent);
+    animation: wave 2s ease-in-out infinite;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.phrase {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #c71585;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.controls {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    border: none;
+    border-radius: 50%;
+    padding: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.control-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 25px rgba(255, 105, 180, 0.6);
+}
+
+.play-btn {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    box-shadow: 0 6px 25px rgba(255, 182, 193, 0.5);
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+}
