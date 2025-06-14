@@ -3,7 +3,8 @@
     padding: 40px;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     width: 720px;
-    height: 1152px;
+    max-width: 98vw;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +13,7 @@
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     animation: fadeIn 1.5s ease-in-out;
+    box-sizing: border-box;
 }
 
 @keyframes fadeIn {
@@ -26,25 +28,193 @@
     }
 }
 
-.home-header h1 {
-    font-size: 2.8rem;
-    color: #fff;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+/* Telas muito grandes */
+@media (min-width: 1400px) {
+    .home-container {
+        width: 900px;
+        max-width: 100vw;
+        padding: 60px 80px;
+        font-size: 1.2rem;
+    }
+
+    .home-link {
+        font-size: 2rem;
+        width: 260px;
+        padding: 20px 30px;
+    }
+
+    .link-icon {
+        font-size: 2.5rem;
+    }
 }
 
-.home-header p {
-    font-size: 1.4rem;
-    color: #fff;
-    margin-bottom: 20px;
+/* Responsividade para tablets */
+@media (max-width: 900px) {
+    .home-container {
+        width: 98vw;
+        max-width: 98vw;
+        height: auto;
+        padding: 18px 4px;
+        border-radius: 12px;
+    }
+
+    .home-header h1 {
+        font-size: 2rem;
+    }
+
+    .home-header p {
+        font-size: 1.1rem;
+    }
+
+    .frase-romantica {
+        font-size: 1.1rem;
+    }
+
+    .home-link {
+        font-size: 1.1rem;
+        padding: 10px 10px;
+        width: 140px;
+        border-radius: 8px;
+    }
+
+    .link-icon {
+        font-size: 1.3rem;
+    }
 }
 
-.frase-romantica {
-    font-size: 1.6rem;
-    color: #fff;
-    font-style: italic;
-    margin-top: 10px;
-    animation: fadeIn 1.5s ease-in-out infinite alternate;
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    .home-container {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        height: auto;
+        padding: 6px 1px;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-header h1 {
+        font-size: 1.1rem;
+        word-break: break-word;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-header p {
+        font-size: 0.9rem;
+        word-break: break-word;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .frase-romantica {
+        font-size: 0.95rem;
+        word-break: break-word;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-links {
+        gap: 8px;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-link {
+        font-size: 0.85rem;
+        padding: 7px 4px;
+        width: 90vw;
+        min-width: 80px;
+        max-width: 98vw;
+        border-radius: 5px;
+        gap: 4px;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .link-icon {
+        font-size: 1rem;
+    }
+
+    .bloqueio-mensagem {
+        font-size: 0.85rem;
+        margin-top: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Telas muito pequenas (ex: celulares antigos) */
+@media (max-width: 400px) {
+    .home-container {
+        padding: 2px 0.5vw;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-header,
+    .home-links,
+    .bloqueio-mensagem {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .home-header h1,
+    .home-header p,
+    .frase-romantica,
+    .bloqueio-mensagem {
+        font-size: 0.75rem;
+    }
+
+    .home-link {
+        font-size: 0.7rem;
+        padding: 4px 2px;
+        width: 96vw;
+        border-radius: 3px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .link-icon {
+        font-size: 0.8rem;
+    }
 }
 
 .home-links {
@@ -70,6 +240,7 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
     width: 200px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .home-link:hover {

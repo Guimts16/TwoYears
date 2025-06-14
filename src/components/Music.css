@@ -1,39 +1,92 @@
 body {
     margin: 0;
-    font-family: "Comic Sans MS", cursive;
-    background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1152px;
-    width: 720px;
-    overflow: hidden;
+    font-family: 'Quicksand', 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #b39ddb 0%, #ede7f6 50%, #ce93d8 100%);
+    min-height: 100vh;
+    min-width: 100vw;
+    height: auto;
+    width: 100%;
+    overflow-x: hidden;
+    box-shadow: 0 0 80px 10px #b39ddb inset;
 }
 
-.hearts-background-full {
+/* Modal de seleção de música */
+.music-select-modal {
     position: fixed;
     top: 0;
     left: 0;
-    width: 720px;
-    height: 1152px;
-    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(179, 157, 219, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.music-select-content {
+    background: rgba(245, 243, 255, 0.97);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px 0 rgba(123, 104, 238, 0.13);
+    padding: 32px 18px;
+    min-width: 260px;
+    text-align: center;
+}
+
+.music-select-content h2 {
+    color: #6c4fa3;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px #fff, 0 1px 0 #b39ddb;
+}
+
+.music-option-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px 0;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #b39ddb 60%, #ede7f6 100%);
+    color: #6c4fa3;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.music-option-btn:hover {
+    background: linear-gradient(90deg, #ede7f6 60%, #b39ddb 100%);
+    color: #fff;
+}
+
+.hearts-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+    overflow: hidden;
 }
 
-.falling-heart-full {
+.heart {
     position: absolute;
-    top: -5%;
-    opacity: 0.8;
-    animation-name: fall-full;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
+    background: radial-gradient(circle at 60% 40%, #b388ff 60%, #ce93d8 100%);
+    clip-path: path('M16 29s-13-8.35-13-17.5S8.5 0 16 7.5 29 3.5 29 11.5 16 29 16 29z');
+    opacity: 0.7;
+    animation: floatHeart 8s linear infinite;
+    will-change: top, opacity, transform;
 }
 
-@keyframes fall-full {
+@keyframes floatHeart {
     0% {
-        transform: translateY(0) scale(1) rotate(0deg);
-        opacity: 0.8;
+        top: 100vh;
+        transform: scale(1) rotate(-10deg);
+        opacity: 0.7;
     }
 
     70% {
@@ -41,37 +94,59 @@ body {
     }
 
     100% {
-        transform: translateY(1152px) scale(0.8) rotate(360deg);
+        top: -10%;
+        transform: scale(1.2) rotate(20deg);
         opacity: 0;
     }
 }
 
+/* Glassmorphism para o player */
 .player-container {
     position: relative;
     text-align: center;
-    padding: 40px;
+    padding: 32px 0 24px 0;
     z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .player-frame {
     position: relative;
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
-    max-width: 300px;
+    background: rgba(245, 243, 255, 0.82);
+    padding: 24px 10px 18px 10px;
+    border-radius: 32px;
+    box-shadow: 0 8px 40px 0 rgba(123, 104, 238, 0.13), 0 1.5px 0 #fff inset;
+    max-width: 370px;
     margin: auto;
     z-index: 1;
+    width: 100%;
+    backdrop-filter: blur(12px) saturate(1.1);
+    border: 2px solid rgba(179, 157, 219, 0.18);
+    transition: box-shadow 0.3s;
+}
+
+.player-frame:hover {
+    box-shadow: 0 12px 60px 0 rgba(123, 104, 238, 0.18), 0 1.5px 0 #fff inset;
 }
 
 .image-container {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     margin: auto;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+    box-shadow: 0 0 24px 6px #b39ddb, 0 0 0 6px #fff6;
+    border: 3px solid #fff;
+    background: linear-gradient(135deg, #ede7f6 60%, #b39ddb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-container img {
@@ -79,10 +154,12 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    box-shadow: 0 0 18px 0 #fff8;
+    border: 2px solid #fff;
 }
 
 .rotating img {
-    animation: spin 10s linear infinite;
+    animation: spin 12s linear infinite;
 }
 
 .wave {
@@ -91,17 +168,23 @@ body {
     left: 0;
     width: 100%;
     height: 20px;
-    background: radial-gradient(circle, #ffc0cb, transparent);
-    animation: wave 2s ease-in-out infinite;
+    background: radial-gradient(circle, #d1c4e9 60%, transparent 100%);
+    animation: wave 2.2s ease-in-out infinite;
     z-index: 0;
     border-radius: 50%;
+    opacity: 0.7;
 }
 
 .phrase {
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: #c71585;
+    font-size: 1.1rem;
+    color: #6c4fa3;
+    font-family: 'Dancing Script', cursive, 'Comic Sans MS', sans-serif;
+    font-weight: 700;
+    text-shadow: 0 2px 8px #fff, 0 1px 0 #b39ddb;
     animation: fadeIn 1s ease-in-out;
+    min-height: 38px;
+    letter-spacing: 0.5px;
 }
 
 @keyframes spin {
@@ -127,37 +210,42 @@ body {
 }
 
 .controls {
-    margin-top: 25px;
+    margin-top: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 24px;
 }
 
 .control-btn {
-    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    background: linear-gradient(135deg, #b388ff 60%, #9575cd 100%);
     border: none;
     border-radius: 50%;
-    padding: 16px;
+    padding: 14px;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(123, 104, 238, 0.18);
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    font-size: 1.2rem;
+    outline: none;
+    border: 2px solid #ede7f6;
 }
 
 .control-btn:hover {
-    transform: scale(1.15);
-    box-shadow: 0 6px 25px rgba(255, 105, 180, 0.6);
+    transform: scale(1.13) rotate(-8deg);
+    box-shadow: 0 8px 30px rgba(123, 104, 238, 0.23);
+    background: linear-gradient(135deg, #ce93d8 60%, #b388ff 100%);
 }
 
 .play-btn {
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    box-shadow: 0 6px 25px rgba(255, 182, 193, 0.5);
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(135deg, #d1c4e9 60%, #b39ddb 100%);
+    box-shadow: 0 8px 30px rgba(179, 157, 219, 0.18);
+    border: 2.5px solid #ede7f6;
 }
 
 @keyframes wave {
@@ -169,7 +257,244 @@ body {
     }
 
     50% {
-        transform: scale(1.2);
-        opacity: 0.4;
+        transform: scale(1.13);
+        opacity: 0.5;
     }
 }
+
+/* Navegação */
+.navigation {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #6c4fa3;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    background: linear-gradient(90deg, #ede7f6 60%, #b39ddb 100%);
+    padding: 6px 14px;
+    border-radius: 10px;
+    box-shadow: 0 1.5px 8px #b39ddb55;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.nav-link:hover {
+    background: linear-gradient(90deg, #b39ddb 60%, #ede7f6 100%);
+    color: #fff;
+    box-shadow: 0 4px 24px #b39ddb99;
+}
+
+.link-icon::before {
+    content: "←";
+    font-size: 1.2em;
+    margin-right: 4px;
+}
+
+/* --- Melhorias de responsividade --- */
+
+/* Telas muito grandes */
+@media (min-width: 1400px) {
+    .player-container {
+        max-width: 520px;
+        padding: 48px 0 32px 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .player-frame {
+        max-width: 480px;
+        padding: 36px 24px 28px 24px;
+    }
+
+    .image-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .phrase {
+        font-size: 1.3rem;
+        min-height: 48px;
+    }
+
+    .controls {
+        gap: 36px;
+    }
+}
+
+/* Telas médias (notebooks/tablets grandes) */
+@media (max-width: 1200px) {
+    .player-container {
+        max-width: 90vw;
+        padding: 24px 0 18px 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .player-frame {
+        max-width: 90vw;
+        padding: 18px 2vw 14px 2vw;
+    }
+
+    .image-container {
+        width: 130px;
+        height: 130px;
+    }
+
+    .phrase {
+        font-size: 1.05rem;
+        min-height: 28px;
+    }
+
+    .controls {
+        gap: 16px;
+    }
+
+    .nav-link {
+        font-size: 0.92rem;
+        padding: 5px 10px;
+        border-radius: 8px;
+    }
+}
+
+/* Ajuste do botão de navegação para não ficar gigante */
+.nav-link {
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border-radius: 10px;
+    box-shadow: 0 1.5px 8px #b39ddb55;
+    /* Mantém o restante das propriedades */
+}
+
+/* Ajuste para telas pequenas (tablets) */
+@media (max-width: 900px) {
+    .player-container {
+        padding: 18px 0 12px 0;
+        max-width: 98vw;
+    }
+
+    .player-frame {
+        max-width: 98vw;
+        padding: 14px 2vw 12px 2vw;
+    }
+
+    .image-container {
+        width: 110px;
+        height: 110px;
+    }
+
+    .phrase {
+        font-size: 1.05rem;
+        min-height: 26px;
+    }
+
+    .controls {
+        gap: 12px;
+    }
+
+    .music-select-content {
+        min-width: 94vw;
+        padding: 14px 2vw;
+    }
+
+    .nav-link {
+        font-size: 0.92rem;
+        padding: 5px 10px;
+        border-radius: 8px;
+    }
+}
+
+/* Telas muito pequenas (celulares) */
+@media (max-width: 600px) {
+    .player-container {
+        padding: 2vw 0 2vw 0;
+        max-width: 100vw;
+    }
+
+    .player-frame {
+        max-width: 100vw;
+        padding: 3vw 1vw 3vw 1vw;
+        border-radius: 14px;
+    }
+
+    .image-container {
+        width: 70px;
+        height: 70px;
+        border-width: 2px;
+    }
+
+    .image-container img {
+        border-width: 1.5px;
+    }
+
+    .phrase {
+        font-size: 0.92rem;
+        min-height: 18px;
+        padding: 0 4px;
+    }
+
+    .controls {
+        gap: 7px;
+    }
+
+    .control-btn,
+    .play-btn {
+        padding: 7px;
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+
+    .music-select-content {
+        min-width: 97vw;
+        padding: 10px 2vw;
+        border-radius: 10px;
+    }
+
+    .music-option-btn {
+        font-size: 0.95rem;
+        padding: 9px 0;
+        border-radius: 8px;
+        margin: 6px 0;
+    }
+
+    .music-select-content h2 {
+        font-size: 1.08rem;
+        margin-bottom: 12px;
+    }
+
+    .navigation {
+        margin-top: 12px;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+        border-radius: 7px;
+    }
+}
+
+/* Ajuste para telas muito estreitas */
+@media (max-width: 400px) {
+    .player-frame {
+        padding: 2vw 0.5vw 2vw 0.5vw;
+    }
+
+    .music-select-content {
+        min-width: 99vw;
+        padding: 6px 1vw;
+    }
+}
+
+/* Google Fonts para um toque especial */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap');

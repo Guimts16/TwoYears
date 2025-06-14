@@ -28,7 +28,7 @@ function Home() {
         const verificarDesbloqueio = () => {
             const hoje = new Date();
             const diaAtual = hoje.getDate();
-            setDesbloqueado(diaAtual >= 15);
+            setDesbloqueado(diaAtual >= 16);
         };
 
         const frasesRomanticas = [
@@ -60,23 +60,27 @@ function Home() {
             </div>
             <div className="home-links">
                 <Link to="/surpresa" className={`home-link ${desbloqueado ? "" : "bloqueado"}`}>
-                    <span className="link-icon">🎁</span>
-                    Surpresas
+                    <span className="link-icon"></span>
+                    {desbloqueado ? "🎁 Surpresas" : "❤ ???"}
                 </Link>
                 <Link to="/galeria" className={`home-link ${desbloqueado ? "" : "bloqueado"}`}>
-                    <span className="link-icon">🖼️</span>
-                    Galeria
+                    <span className="link-icon"></span>
+                    {desbloqueado ? "🖼️ Galeria" : "❤ ???"}
                 </Link>
                 <Link to="/carta" className={`home-link ${desbloqueado ? "" : "bloqueado"}`}>
-                    <span className="link-icon">💌</span>
-                    Carta
+                    <span className="link-icon"></span>
+                    {desbloqueado ? "💌 Carta" : "❤ ???"}
                 </Link>
-                <Link to="/music" className={`home-link `}>
-                    <span className="link-icon">🎶</span>
-                    Zuzu
+                <Link to="/music" className={`home-link ${desbloqueado ? "" : "bloqueado"}`}>
+                    <span className="link-icon"></span>
+                    {desbloqueado ? "🎶 Música" : "❤ ???"}
+                </Link>
+                <Link to="/game" className={`home-link ${desbloqueado ? "" : "bloqueado"}`}>
+                    <span className="link-icon"></span>
+                    {desbloqueado ? "🎮 Joguinho" : "❤ ???"}
                 </Link>
             </div>
-            {!desbloqueado && <p className="bloqueio-mensagem">Os links serão desbloqueados no dia 15! 💖</p>}
+            {!desbloqueado && <p className="bloqueio-mensagem">Os links serão desbloqueados no dia 16 (Segunda)! 💖</p>}
         </div>
     );
 }

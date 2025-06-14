@@ -1,0 +1,291 @@
+.game-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.game-title {
+    font-size: 2rem;
+    color: #a020f0;
+    margin-bottom: 20px;
+}
+
+.game-meninas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.game-menina-btn {
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.game-menina-btn.selected {
+    border: 2px solid #a020f0;
+    box-shadow: 0 0 10px #a020f0aa;
+}
+
+.game-message {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #a020f0;
+}
+
+.game-reset-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #a020f0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.game-reset-btn:hover {
+    background: #7c13b8;
+}
+
+.game-reset-btn.selected {
+    background: #fff;
+    color: #a020f0;
+    border: 2px solid #a020f0;
+    font-weight: bold;
+}
+
+.game-uma-menina {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin: 40px 0 20px 0;
+}
+
+.game-coluna-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.game-coluna-botoes .game-menina-btn {
+    width: 90px;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 12px;
+    border: 2px solid #a020f0;
+    background: #fff;
+    color: #a020f0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.game-coluna-botoes .game-menina-btn:hover {
+    background: #a020f0;
+    color: #fff;
+}
+
+.game-reset-btn,
+.game-coluna-botoes .game-menina-btn {
+    font-family: inherit;
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    border-radius: 18px;
+    border: none;
+    background: linear-gradient(90deg, #a020f0 0%, #ff69b4 100%);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 2px 12px #a020f055;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition:
+        background 0.25s,
+        color 0.25s,
+        box-shadow 0.25s,
+        transform 0.1s;
+    outline: none;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+}
+
+.game-reset-btn.selected {
+    background: linear-gradient(90deg, #fff 0%, #ffe6fa 100%);
+    color: #a020f0;
+    border: 2px solid #a020f0;
+    font-weight: bold;
+    box-shadow: 0 2px 12px #a020f033;
+}
+
+.game-reset-btn:hover,
+.game-coluna-botoes .game-menina-btn:hover {
+    background: linear-gradient(90deg, #ff69b4 0%, #a020f0 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px #a020f088;
+}
+
+.btn-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #a020f0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.game-coluna-botoes .game-menina-btn {
+    width: 160px;
+    margin: 0 auto 12px auto;
+    font-size: 1.05rem;
+    background: linear-gradient(90deg, #fff 0%, #ffe6fa 100%);
+    color: #a020f0;
+    border: 2px solid #a020f0;
+    box-shadow: 0 2px 8px #a020f022;
+    font-weight: 600;
+}
+
+.game-coluna-botoes .game-menina-btn:hover {
+    background: linear-gradient(90deg, #a020f0 0%, #ff69b4 100%);
+    color: #fff;
+    border: 2px solid #ff69b4;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px #a020f088;
+}
+
+.game-coluna-botoes .game-menina-btn:active,
+.game-reset-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 4px #a020f044;
+}
+
+.game-menina-imgbox {
+    position: relative;
+    width: 260px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.personagem-base {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* calças */
+.calca-pijama {
+    background: url('./calça2.png') center/contain no-repeat;
+    position: absolute;
+    left: 57px;
+    rotate: -1deg;
+    top: 88px;
+    width: 57%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.calca-Crispy {
+    background: url('./calça1.png') center/contain no-repeat;
+    position: absolute;
+    left: 51px;
+    top: 100px;
+    rotate: -10deg;
+    width: 68%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Roupas */
+.pijama-marrom {
+    background: url('./roupa4.png') center/contain no-repeat;
+    position: absolute;
+    left: 16px;
+    top: -100px;
+    width: 90%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.roupa-ursinho {
+    background: url('./roupa2.png') center/contain no-repeat;
+    position: absolute;
+    rotate: 13deg;
+    left: 40px;
+    top: -76px;
+    width: 83%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.roupa-ursinho2 {
+    background: url('./roupa3.png') center/contain no-repeat;
+    position: absolute;
+    rotate: 6deg;
+    left: 21px;
+    top: -96px;
+    width: 88%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.roupa-cookie {
+    background: url('./roupa1.png') center/contain no-repeat;
+    position: absolute;
+    rotate: -11deg;
+    left: -10px;
+    top: -76px;
+    width: 93%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .game-meninas {
+        gap: 10px;
+    }
+
+    .game-menina-btn {
+        font-size: 28px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .game-duas-meninas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-uma-menina {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-coluna-botoes {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .game-menina-svg {
+        margin: 0;
+    }
+}
