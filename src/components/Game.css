@@ -187,7 +187,7 @@
 }
 
 .calca-pijama {
-    background: url('./calça2.png') center/contain no-repeat;
+    background: url('../assets/calça2.png') center/contain no-repeat;
     position: absolute;
     left: 57px;
     rotate: -1deg;
@@ -198,7 +198,7 @@
 }
 
 .calca-Crispy {
-    background: url('./calça1.png') center/contain no-repeat;
+    background: url('../assets/calça1.png') center/contain no-repeat;
     position: absolute;
     left: 51px;
     top: 100px;
@@ -209,7 +209,7 @@
 }
 
 .pijama-marrom {
-    background: url('./roupa4.png') center/contain no-repeat;
+    background: url('../assets/roupa4.png') center/contain no-repeat;
     position: absolute;
     left: 16px;
     top: -100px;
@@ -220,7 +220,7 @@
 }
 
 .roupa-ursinho {
-    background: url('./roupa2.png') center/contain no-repeat;
+    background: url('../assets/roupa2.png') center/contain no-repeat;
     position: absolute;
     rotate: 13deg;
     left: 40px;
@@ -232,7 +232,7 @@
 }
 
 .roupa-ursinho2 {
-    background: url('./roupa3.png') center/contain no-repeat;
+    background: url('../assets/roupa3.png') center/contain no-repeat;
     position: absolute;
     rotate: 6deg;
     left: 21px;
@@ -244,7 +244,7 @@
 }
 
 .roupa-cookie {
-    background: url('./roupa1.png') center/contain no-repeat;
+    background: url('../assets/roupa1.png') center/contain no-repeat;
     position: absolute;
     rotate: -11deg;
     left: -10px;
