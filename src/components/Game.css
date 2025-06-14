@@ -186,7 +186,6 @@
     user-select: none;
 }
 
-/* calças */
 .calca-pijama {
     background: url('./calça2.png') center/contain no-repeat;
     position: absolute;
@@ -209,7 +208,6 @@
     pointer-events: none;
 }
 
-/* Roupas */
 .pijama-marrom {
     background: url('./roupa4.png') center/contain no-repeat;
     position: absolute;

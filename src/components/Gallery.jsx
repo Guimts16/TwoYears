@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Gallery.css";
 
-// Exemplo de dados com título e legenda
 const imagens = [
     { src: "./Img1.jpg", titulo: "Nosso Primeiro Encontro", legenda: "Nossas fotos bobas de testa kkk" },
     { src: "./Img2.jpg", titulo: "Passeio no Parque", legenda: "Lembra desse dia, zuzu?" },
@@ -97,7 +96,6 @@ function Gallery() {
                     <div className="modal-content" onClick={e => e.stopPropagation()}>
                         <img src={modalImg.src} alt={modalImg.titulo} className="modal-image" />
                         <div className="modal-caption">
-                            {/* Removido o título */}
                             <p>{modalImg.legenda}</p>
                         </div>
                         <button className="modal-close" onClick={closeModal}>Fechar</button>

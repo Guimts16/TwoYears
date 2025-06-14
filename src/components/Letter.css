@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@500&display=swap'); */
-
 .letter-container {
     display: flex;
     flex-direction: column;
@@ -210,7 +208,6 @@
     color: #b37dff;
 }
 
-/* Responsividade para tablets */
 @media (max-width: 900px) {
     .envelope-wrapper {
         width: 220px;
@@ -235,7 +232,6 @@
     }
 }
 
-/* Responsividade para celulares */
 @media (max-width: 600px) {
     .letter-container {
         padding: 8px;

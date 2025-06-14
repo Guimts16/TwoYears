@@ -164,7 +164,6 @@ h1 {
     justify-content: center;
 }
 
-/* Responsividade para tablets */
 @media (max-width: 900px) {
     .gallery-container {
         padding: 16px 4px;
@@ -200,7 +199,6 @@ h1 {
     }
 }
 
-/* Responsividade para celulares */
 @media (max-width: 600px) {
     .gallery-container {
         padding: 4px 1px;

@@ -28,7 +28,6 @@
     }
 }
 
-/* Telas muito grandes */
 @media (min-width: 1400px) {
     .home-container {
         width: 900px;
@@ -48,53 +47,45 @@
     }
 }
 
-/* Responsividade para tablets */
 @media (max-width: 900px) {
     .home-container {
-        width: 98vw;
-        max-width: 98vw;
-        height: auto;
-        padding: 18px 4px;
-        border-radius: 12px;
+        width: 95vw;
+        max-width: 95vw;
+        padding: 10px 2vw;
+        border-radius: 10px;
     }
 
     .home-header h1 {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
     .home-header p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .frase-romantica {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .home-link {
-        font-size: 1.1rem;
-        padding: 10px 10px;
-        width: 140px;
-        border-radius: 8px;
+        font-size: 0.95rem;
+        padding: 7px 6px;
+        width: 110px;
+        border-radius: 7px;
     }
 
     .link-icon {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 }
 
-/* Responsividade para celulares */
 @media (max-width: 600px) {
     .home-container {
-        width: 100vw;
-        min-width: 100vw;
-        max-width: 100vw;
-        height: auto;
-        padding: 6px 1px;
-        border-radius: 6px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        width: 99vw;
+        min-width: 99vw;
+        max-width: 99vw;
+        padding: 3px 1vw;
+        border-radius: 5px;
     }
 
     .home-header {
@@ -106,22 +97,6 @@
     }
 
     .home-header h1 {
-        font-size: 1.1rem;
-        word-break: break-word;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .home-header p {
-        font-size: 0.9rem;
-        word-break: break-word;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .frase-romantica {
         font-size: 0.95rem;
         word-break: break-word;
         text-align: center;
@@ -129,9 +104,25 @@
         margin-right: auto;
     }
 
+    .home-header p {
+        font-size: 0.8rem;
+        word-break: break-word;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .frase-romantica {
+        font-size: 0.8rem;
+        word-break: break-word;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .home-links {
-        gap: 8px;
-        margin-top: 10px;
+        gap: 6px;
+        margin-top: 8px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -141,13 +132,13 @@
     }
 
     .home-link {
-        font-size: 0.85rem;
-        padding: 7px 4px;
-        width: 90vw;
-        min-width: 80px;
-        max-width: 98vw;
-        border-radius: 5px;
-        gap: 4px;
+        font-size: 0.7rem;
+        padding: 5px 2px;
+        width: 80vw;
+        min-width: 60px;
+        max-width: 90vw;
+        border-radius: 4px;
+        gap: 3px;
         box-sizing: border-box;
         justify-content: center;
         align-items: center;
@@ -158,27 +149,22 @@
     }
 
     .link-icon {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .bloqueio-mensagem {
-        font-size: 0.85rem;
-        margin-top: 10px;
+        font-size: 0.7rem;
+        margin-top: 7px;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
     }
 }
 
-/* Telas muito pequenas (ex: celulares antigos) */
 @media (max-width: 400px) {
     .home-container {
-        padding: 2px 0.5vw;
-        border-radius: 3px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        padding: 1px 0.5vw;
+        border-radius: 2px;
     }
 
     .home-header,
@@ -196,14 +182,14 @@
     .home-header p,
     .frase-romantica,
     .bloqueio-mensagem {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
     }
 
     .home-link {
-        font-size: 0.7rem;
-        padding: 4px 2px;
-        width: 96vw;
-        border-radius: 3px;
+        font-size: 0.55rem;
+        padding: 2px 1px;
+        width: 94vw;
+        border-radius: 2px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -213,7 +199,7 @@
     }
 
     .link-icon {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 }
 

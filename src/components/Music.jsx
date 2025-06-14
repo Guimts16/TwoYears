@@ -54,7 +54,7 @@ export default function MusicPlayer() {
     const [currentImage, setCurrentImage] = useState(0);
     const [currentPhrase, setCurrentPhrase] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(true); // Modal aberto ao iniciar
+    const [isModalOpen, setIsModalOpen] = useState(true);
     const [selectedMusic, setSelectedMusic] = useState(musicOptions[0].src);
     const audioRef = useRef(null);
 

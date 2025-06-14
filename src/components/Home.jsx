@@ -10,7 +10,7 @@ function Home() {
     useEffect(() => {
         const calcularTempoRestante = () => {
             const hoje = new Date();
-            const dia30 = new Date(hoje.getFullYear(), hoje.getMonth(), 30, 0, 0, 0); // Dia 30 à meia-noite
+            const dia30 = new Date(hoje.getFullYear(), hoje.getMonth(), 30, 0, 0, 0);
             const diferenca = dia30 - hoje;
 
             if (diferenca > 0) {
@@ -28,7 +28,7 @@ function Home() {
         const verificarDesbloqueio = () => {
             const hoje = new Date();
             const diaAtual = hoje.getDate();
-            setDesbloqueado(diaAtual >= 16);
+            setDesbloqueado(diaAtual >= 14);
         };
 
         const frasesRomanticas = [
