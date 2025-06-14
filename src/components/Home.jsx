@@ -28,7 +28,7 @@ function Home() {
         const verificarDesbloqueio = () => {
             const hoje = new Date();
             const diaAtual = hoje.getDate();
-            setDesbloqueado(diaAtual >= 14);
+            setDesbloqueado(diaAtual >= 16);
         };
 
         const frasesRomanticas = [
@@ -67,9 +67,9 @@ function Home() {
                     <span className="link-icon"></span>
                     {desbloqueado ? "🖼️ Galeria" : "❤ ???"}
                 </Link>
-                <Link to="/carta" className={`home-link ${desbloqueado ? "" : "bloqueado"}`}>
-                    <span className="link-icon"></span>
-                    {desbloqueado ? "💌 Carta" : "❤ ???"}
+                <Link to="/carta" className={`home-link `}>
+                    <span className="link-icon">💌 Carta</span>
+
                 </Link>
                 <Link to="/music" className={`home-link ${desbloqueado ? "" : "bloqueado"}`}>
                     <span className="link-icon"></span>
@@ -81,7 +81,7 @@ function Home() {
                 </Link>
             </div>
             {!desbloqueado && <p className="bloqueio-mensagem">Os links serão desbloqueados no dia 16 (Segunda)! 💖</p>}
-        </div>
+        </div >
     );
 }
 
