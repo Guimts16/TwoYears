@@ -17,38 +17,10 @@ const conjuntos = [
             { nome: "Calça de Ursinho", classe: "calca-pijama" },
             { nome: "Calça marrom", classe: "calca-Crispy" }
         ]
-    },
-    {
-        nome: "Roxo",
-        moletons: [
-            { nome: "Moletom Preto", classe: "roupa-azul" },
-            { nome: "Moletom Roxo", classe: "roupa-macacao" }
-        ],
-        calcas: [
-            { nome: "Sem calça", classe: "" },
-            { nome: "Calça preta", classe: "calca-preta" },
-            { nome: "Calça roxa", classe: "calca-rosa" }
-        ]
-    },
-    {
-        nome: "Preto",
-        moletons: [
-            { nome: "Moletom Preto", classe: "roupa-preto" },
-            { nome: "Moletom Cinza", classe: "roupa-cinza" }
-        ],
-        calcas: [
-            { nome: "Sem calça", classe: "" },
-            { nome: "Calça preta", classe: "calca-preta" },
-            { nome: "Calça cinza", classe: "calca-cinza" }
-        ]
     }
+
 ];
 
-const acessorios = [
-    { nome: "Laço", classe: "acessorio-laco" },
-    { nome: "Chapéu", classe: "acessorio-chapeu" },
-    { nome: "Óculos", classe: "acessorio-oculos" }
-];
 
 function getRandomIdx(arr) {
     return Math.floor(Math.random() * arr.length);
@@ -58,21 +30,16 @@ function Game() {
     const [conjuntoIdx, setConjuntoIdx] = useState(0);
     const [roupa, setRoupa] = useState(0);
     const [calca, setCalca] = useState(0);
-    const [acessorio, setAcessorio] = useState(0);
-    const [fotoMsg, setFotoMsg] = useState("");
 
     const moletons = conjuntos[conjuntoIdx].moletons;
     const calcas = conjuntos[conjuntoIdx].calcas;
 
     const trocarRoupa = () => setRoupa((prev) => (prev + 1) % moletons.length);
     const trocarCalca = () => setCalca((prev) => (prev + 1) % calcas.length);
-    const trocarAcessorio = () => setAcessorio((prev) => (prev + 1) % acessorios.length);
 
     const randomizar = () => {
         setRoupa(getRandomIdx(moletons));
         setCalca(getRandomIdx(calcas));
-        setAcessorio(getRandomIdx(acessorios));
-        setFotoMsg("");
     };
     const escolherConjunto = (idx) => {
         setConjuntoIdx(idx);
@@ -99,13 +66,11 @@ function Game() {
                 <div className="game-coluna-botoes">
                     <button className="game-menina-btn" onClick={trocarRoupa}>{moletons[roupa].nome}</button>
                     <button className="game-menina-btn" onClick={trocarCalca}>{calcas[calca].nome}</button>
-                    <button className="game-menina-btn" onClick={trocarAcessorio}>{acessorios[acessorio].nome}</button>
                 </div>
                 <div className="game-menina-imgbox">
                     <img src={personagemBase} alt="Personagem base" className="personagem-base" draggable={false} />
                     <div className={`roupa-layer ${moletons[roupa].classe}`}></div>
                     <div className={`calca-layer ${calcas[calca].classe}`}></div>
-                    <div className={`acessorio-layer ${acessorios[acessorio].classe}`}></div>
                 </div>
             </div>
             <div style={{ margin: "30px 0" }}>

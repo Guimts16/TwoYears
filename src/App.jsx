@@ -6,6 +6,7 @@ import Gallery from "./components/Gallery";
 import Letter from "./components/Letter";
 import Music from "./components/Music";
 import Game from "./components/Game";
+
 function App() {
   return (
     <Router>

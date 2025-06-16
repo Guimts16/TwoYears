@@ -79,6 +79,7 @@ function Home() {
                     <span className="link-icon"></span>
                     {desbloqueado ? "🎮 Joguinho" : "❤ ???"}
                 </Link>
+
             </div>
             {!desbloqueado && <p className="bloqueio-mensagem">Os links serão desbloqueados no dia 16 (Segunda)! 💖</p>}
         </div >
